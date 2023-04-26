@@ -1,7 +1,7 @@
 use std::fs;
 use std::collections::HashMap;
 
-fn main() {
+pub fn main() {
     let file_path = "../inputs/02_input.txt";
 
     let contents = fs::read_to_string(file_path)
@@ -24,7 +24,7 @@ fn main() {
             total_points += 6
         } else { // Draw
             total_points += 3
-        }
+        };
         total_points += shape_scores.iter().position(|x| x == &line[1]).unwrap() as u16 + 1;
     };
     println!("Total points: {}", total_points);
